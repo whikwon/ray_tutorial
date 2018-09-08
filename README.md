@@ -1,5 +1,5 @@
 ### 1. Using Ray with toy code
-Three steps are needed to train my own environment
+Four steps are needed to train my own environment
 1. Register my environment 
 ```python
 from ray.tune.registry import register_env
@@ -40,14 +40,15 @@ for i in range(NUM_ITERATIONS):
 ```
 
 ### 2. Setting cluster for distributed training
-- When use 2 VMs (head, worker)
+- Assume anaconda environment has all set in the VMs(head, workers).
+- When use 2 VMs(head, worker)
 ```
 $HEAD ray start --head --redis-port=8787
 $WORKER ray start --redis-address=<head-ip>:8787
 python ppo.py
 ```
 
-- When use more than 2 VMs (head, n workers), It would be boring to execute all the VMs seperately. Let's use pssh.
+- When use more than 2 VMs(head, n workers), It would be boring to execute all the VMs seperately. Let's use pssh.
 ```
 cd remote
 sh start_train.sh
@@ -59,11 +60,8 @@ sh start_train.sh
 
 ### 4. Set slack alarmer to notify the error.
 - Slack notification tutorial: https://medium.com/@harvitronix/using-python-slack-for-quick-and-easy-mobile-push-notifications-5e5ff2b80aad
-
-`export SLACK_TOKEN=<token-you-got-from-slack>`
-
-Add code below to let me notified when error occurred.
-
+- `export SLACK_TOKEN=<token-you-got-from-slack>`
+- Add code below to let me notified when error occurred.
 ```python
 try:
     train()
