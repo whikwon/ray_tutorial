@@ -15,7 +15,7 @@ register_env(ENV_NAME, env_creator)
 ```
 
 2. Import the agents I want
-- If you want to change the config options, please check ![agents.py](https://github.com/ray-project/ray/tree/master/python/ray/rllib/agents/agents.py), ![ppo.py](https://github.com/ray-project/ray/blob/master/python/ray/rllib/agents/ppo/ppo.py)
+- If you want to change the config options, please check [agents.py](https://github.com/ray-project/ray/tree/master/python/ray/rllib/agents/agents.py), [ppo.py](https://github.com/ray-project/ray/blob/master/python/ray/rllib/agents/ppo/ppo.py)
 ```python
 from ray.rllib.agents import ppo
 
