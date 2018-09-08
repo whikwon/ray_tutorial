@@ -1,4 +1,4 @@
-### 1. Using Ray with toy code
+### 1. Train my environment using ray  
 Four steps are needed to train my own environment
 1. Register my environment 
 ```python
