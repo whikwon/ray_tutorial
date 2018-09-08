@@ -1,3 +1,4 @@
+## Ray Tutorial
 ### 1. Train my environment using ray  
 Four steps are needed to train my own environment
 1. Register my environment 
@@ -14,7 +15,7 @@ def env_creator(env_config):
 register_env(ENV_NAME, env_creator)
 ```
 
-2. Import the agents I want
+2. Import the agent I want
 - If you want to change the config options, please check [agent.py](https://github.com/ray-project/ray/tree/master/python/ray/rllib/agents/agent.py), [ppo.py](https://github.com/ray-project/ray/blob/master/python/ray/rllib/agents/ppo/ppo.py)
 ```python
 from ray.rllib.agents import ppo
